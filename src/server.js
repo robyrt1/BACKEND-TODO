@@ -1,6 +1,6 @@
-const { ExpressConfig } = require("./config/express.config");
-const { EnvironmentShared } = require("./shared/environment.shared");
-require("./config/mysql.config");
+const { ExpressConfig } = require("./config/express.config.js");
+const { EnvironmentShared } = require("./shared/environment.shared.js");
+require("./config/mysql.config.js");
 
 
 const expressConfig = new ExpressConfig()

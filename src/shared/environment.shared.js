@@ -1,5 +1,5 @@
+//const { process } = require("@hapi/joi/lib/errors");
 const dotenv = require("dotenv");
-const { Error } = require("mongoose");
 
 class EnvironmentShared {
   constructor() {
@@ -15,17 +15,16 @@ class EnvironmentShared {
   setEnvs() {
     if (!this.getInstance().envs) {
       const { parsed } = dotenv.config({
-        path: `env-file/.config.${process.env.NODE_ENV || "dev"}.env`,
+        path: `env-files/.config.${process.env.NODE_ENV || "dev"}.env`,
       });
 
       this.getInstance().envs = { ...(parsed || {}), ...process.env };
     }
   }
 
-  getEnv({ envName }) {
-    if (!this.getInstance().envs[envName]) 
-      throw new Error(`${envName} not found`);
-      
+  getEnv( envName ) {
+    if (!this.getInstance().envs[envName])
+      throw new Error(`'${envName}' not found`)
     return this.getInstance().envs[envName];
     
   }

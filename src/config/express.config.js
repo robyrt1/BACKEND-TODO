@@ -24,7 +24,7 @@ class ExpressConfig {
     });
   }
   setRoutes(routesContext) {
-    routesContext = (this.getServer());
+    routesContext(this.getServer());
   }
   setErrorLongHandlers() {
     this.getServer().use(function (error, req, res, next) {

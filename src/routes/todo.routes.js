@@ -1,5 +1,5 @@
-// const todoRoutes = {app} => {
+const todoRoutes = (app) => {
 
-// }
+}
 
-// module.exports = {todoRoutes};
+module.exports = {todoRoutes};

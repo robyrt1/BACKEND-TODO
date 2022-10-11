@@ -22,7 +22,7 @@ class MysqlConfig {
         password: this.EnvironmentShared.getEnv("MYSQL_PASSWORD"),
         database: this.EnvironmentShared.getEnv("MYSQL_DATABASE"),
         port: this.EnvironmentShared.getEnv("MYSQL_PORT"),
-        dateString: true,
+        dateStrings: true,
       });
       console.log("[INFO] - Database is connected")
     }

@@ -22,7 +22,7 @@ class TodoController {
 
     updateById(req, res, next){
         const result = this.todoService.updateById(req.params.id,req.body)
-        result.status(result.statusCode).json(result);
+        res.status(result.statusCode).json(result);
     }
 }
 

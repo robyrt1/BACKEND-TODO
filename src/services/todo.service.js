@@ -73,12 +73,15 @@ class TodoService {
     const todoFromDB = this.getById(id);
 
     if (!todoFromDB.data) {
-      throw { statusCode: BAD_REQUEST, error: `todo not found` };
+      throw { statusCode: BAD_REQUEST, error: `todo not found`};
     }
 
-    const mergedData = { ...todoFromDB.data, ...body}
-    db.execQuery(`update todo set name = '${mergedData.name}',date = '${mergedData.date}' where id = ${id}`)
-    return { statusCode: OK, data:undefined };
+    const mergedData = { ...todoFromDB.data, ...body };
+    
+    db.execQuery(
+      `update todo set name = '${mergedData.name}',date = '${mergedData.date}' where id = ${id}`
+    );
+    return { statusCode: NO_CONTENT, data: undefined };
   }
 }
 

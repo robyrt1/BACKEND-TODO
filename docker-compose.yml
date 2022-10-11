@@ -12,8 +12,25 @@ services:
       - 3306:3306
     networks:
       - mysql-ntw
-
+      
+  api: 
+    container_name: api-todolist
+    build:
+      context: './'
+      dockerfile: ./docker/api.dockerfile
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: dev
+      MYSQL_HOST: mysql-todolist
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    networks:
+      - mysql-ntw
 networks:
   mysql-ntw:
     external: true
-      

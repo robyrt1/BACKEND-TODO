@@ -1,4 +1,4 @@
-const { BAD_REQUEST } = require("../constants/http.codes");
+const { BAD_REQUEST } = require("../../constants/http.codes.js");
 class JoiValidator {
     validate(schema, payload){
         const { value, error } = schema.validate(payload)

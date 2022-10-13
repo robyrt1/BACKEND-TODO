@@ -5,7 +5,8 @@
   "author": "Rbert Pinto Mendes",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "test": "sh test/script.sh"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",

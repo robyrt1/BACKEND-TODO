@@ -42,7 +42,7 @@ class TodoService {
   add(body) {
     this.joiValidator.validate(addValidatorTodoJoiSchema, body);
     const todoFromDB = this.getByNameAndDate(body);
-
+  
     if (todoFromDB.data) {
       throw { statusCode: BAD_REQUEST, error: `todo already exists` };
     }
@@ -81,7 +81,7 @@ class TodoService {
     db.execQuery(
       `update todo set name = '${mergedData.name}',date = '${mergedData.date}' where id = ${id}`
     );
-    return { statusCode: NO_CONTENT, data: undefined };
+    return { statusCode: NO_CONTENT, data: "successfully updated" };
   }
 }
 
